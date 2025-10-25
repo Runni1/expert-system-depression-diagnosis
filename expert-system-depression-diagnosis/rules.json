@@ -1,1 +1,65 @@
+{
+  "info": {
+    "project": "Expert System Depression Diagnosis",
+    "version": "1.0",
+    "authors": ["Runni", "Lathifah"],
+    "source": {
+      "main": "Implementasi Ulang Sistem Pakar Berbasis Rule",
+      "alt": "Sistem Pakar Diagnosa Gangguan Mental dengan Metode Certainty Factor"
+    }
+  },
+
+  "symptoms": [
+    { "id": "G1", "name": "Before the menstrual cycle", "expert_cf": -0.8, "source": "main" },
+    { "id": "G2", "name": "There is no appetite", "expert_cf": 0.8, "source": "main" },
+    { "id": "G3", "name": "Tend to be a loner", "expert_cf": 0.8, "source": "main" },
+    { "id": "G4", "name": "Like to be alone", "expert_cf": 0.8, "source": "main" },
+    { "id": "G5", "name": "Easy to cry", "expert_cf": 0.6, "source": "main" },
+    { "id": "G6", "name": "Easily offended", "expert_cf": 0.8, "source": "main" },
+    { "id": "G7", "name": "Easily discouraged", "expert_cf": 0.8, "source": "main" },
+    { "id": "G8", "name": "Low self-confidence", "expert_cf": 0.8, "source": "main" },
+    { "id": "G9", "name": "Feeling anxious", "expert_cf": 0.8, "source": "main" },
+    { "id": "G10", "name": "Feel restless", "expert_cf": 0.8, "source": "main" },
+    { "id": "G11", "name": "Loss of menstrual cycle", "expert_cf": 0.4, "source": "main" },
+    { "id": "G12", "name": "Personality changes", "expert_cf": 0.4, "source": "main" },
+    { "id": "G13", "name": "Looked grim", "expert_cf": 0.8, "source": "main" },
+    { "id": "G14", "name": "Passive attitude", "expert_cf": 0.8, "source": "main" },
+    { "id": "G15", "name": "Feeling suspicious", "expert_cf": 0.6, "source": "main" },
+    { "id": "G16", "name": "Like to criticize", "expert_cf": -0.4, "source": "main" },
+    { "id": "G17", "name": "Filled with negative thoughts", "expert_cf": 0.8, "source": "main" },
+    { "id": "G18", "name": "Excessive fear will go crazy", "expert_cf": 0.8, "source": "main" },
+    { "id": "G19", "name": "Excessive guilt", "expert_cf": 0.8, "source": "main" },
+    { "id": "G20", "name": "Delusions or hallucinations", "expert_cf": 0.8, "source": "main" },
+    { "id": "G21", "name": "Depressed mood", "expert_cf": 0.8, "source": "main" },
+    { "id": "G22", "name": "Loss of energy", "expert_cf": 0.8, "source": "main" },
+    { "id": "G23", "name": "Feeling worthless", "expert_cf": 0.8, "source": "main" },
+    { "id": "G24", "name": "Feeling sad prolonged", "expert_cf": 0.9, "source": "alt" },
+    { "id": "G25", "name": "Loss of interest in daily activities", "expert_cf": 0.8, "source": "alt" },
+    { "id": "G26", "name": "Sleep disorders (insomnia or hypersomnia)", "expert_cf": 0.7, "source": "alt" },
+    { "id": "G27", "name": "Difficulty concentrates", "expert_cf": 0.6, "source": "alt" }
+  ],
+
+  "diagnoses": [
+    { "id": "D1", "name": "Vegetative Depression" },
+    { "id": "D2", "name": "Agitation Depression" },
+    { "id": "D3", "name": "Dysrhythmic Depression" },
+    { "id": "D4", "name": "Psychotic Depression" }
+  ],
+
+  "rules": [
+    { "id": "R1_m", "if": ["G2","G3","G4"], "then": "D1", "cf": 0.8, "note": "main rule men" },
+    { "id": "R2_m", "if": ["G2","G5","G6","G7","G8","G9","G10"], "then": "D2", "cf": 0.8, "note": "main rule men" },
+    { "id": "R3_m", "if": ["G12","G13","G14","G15","G16","G17","G18"], "then": "D3", "cf": 0.75, "note": "main rule men" },
+    { "id": "R4_m", "if": ["G19","G20","G21","G22","G23"], "then": "D4", "cf": 0.9, "note": "main rule men" },
+    { "id": "R5_m", "if": ["G3","G12","G24","G27"], "then": "D3", "cf": 0.60, "note": "parallel rule D3 (men)" },
+    { "id": "R6_m", "if": ["G9","G17","G25","G27"], "then": "D3", "cf": 0.65, "note": "parallel rule D3 (men)" },
+
+    { "id": "R1_f", "if": ["G1","G2","G3","G4"], "then": "D1", "cf": 0.8, "note": "main rule women" },
+    { "id": "R2_f", "if": ["G2","G5","G6","G7","G8","G9","G10","G11"], "then": "D2", "cf": 0.8, "note": "main rule women" },
+    { "id": "R3_f", "if": ["G1","G11","G12","G13","G14","G15","G16","G17","G18"], "then": "D3", "cf": 0.75, "note": "main rule women" },
+    { "id": "R4_f", "if": ["G19","G20","G21","G22","G23"], "then": "D4", "cf": 0.9, "note": "main rule women" },
+    { "id": "R5_f", "if": ["G1","G11","G24","G25"], "then": "D3", "cf": 0.60, "note": "parallel rule D3 (women)" },
+    { "id": "R6_f", "if": ["G13","G12","G26","G27"], "then": "D3", "cf": 0.55, "note": "parallel rule D3 (women)" }
+  ]
+}
 
