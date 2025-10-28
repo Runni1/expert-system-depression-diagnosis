@@ -1,1 +1,372 @@
 
+/* ===== Global ===== */
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  color: #333;
+  background-color: #f7faff;
+  scroll-behavior: smooth;
+}
+
+.fade-in {
+  animation: fadeIn 1.5s ease-in;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ===== Hero Section ===== */
+.hero-section {
+  text-align: center;
+  padding: 120px 20px 100px;
+  background: linear-gradient(160deg, #a8dadc, #e0f7fa);
+  color: #003049;
+}
+
+.hero-content {
+  background-color: rgba(255, 255, 255, 0.6);
+  max-width: 800px;
+  margin: auto;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.hero-content h1 {
+  font-size: 56px;
+  margin-bottom: 10px;
+}
+
+.hero-content h2 {
+  font-weight: 400;
+  color: #01497c;
+  margin-bottom: 20px;
+}
+
+.hero-content p {
+  font-size: 18px;
+  line-height: 1.7;
+  margin-bottom: 30px;
+}
+
+.btn-primary {
+  background-color: #0077b6;
+  color: white;
+  padding: 15px 40px;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.2s;
+}
+
+.btn-primary:hover {
+  background-color: #023e8a;
+  transform: scale(1.05);
+}
+
+/* ===== Info Section ===== */
+.info-section {
+  background-color: #ffffff;
+  padding: 100px 20px;
+  text-align: center;
+}
+
+.info-section h2 {
+  font-size: 36px;
+  color: #003049;
+  margin-top: -50px;
+  margin-bottom: 50px;
+  font-weight: 600;
+}
+
+.info-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.info-card {
+  background-color: #e8f6ff;
+  border-radius: 15px;
+  padding: 30px;
+  box-shadow: 0 5px 12px rgba(0, 0, 0, 0.08);
+  transition: transform 0.2s, box-shadow 0.3s;
+}
+
+.info-card:hover {
+  transform: translateY(-7px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+.info-card h3 {
+  color: #0077b6;
+  font-size: 20px;
+  margin-bottom: 12px;
+}
+
+.info-card p {
+  font-size: 15.5px;
+  line-height: 1.7;
+}
+
+/* ===== Footer ===== */
+footer {
+  text-align: center;
+  padding: 25px;
+  background-color: #caf0f8;
+  font-size: 14px;
+  color: #555;
+}
+
+/* ===== Gender Section ===== */
+#genderSection {
+  text-align: center;
+  background-color: #e3f2fd;
+  padding: 100px 20px;
+  min-height: 100vh; /* biar tingginya penuh layar */
+}
+
+#genderSection h2 {
+  color: #003049;
+  margin-bottom: 40px;
+  font-size: 28px;
+}
+
+.gender-options {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.gender-btn {
+  background-color: #0077b6;
+  color: white;
+  border: none;
+  padding: 15px 40px;
+  border-radius: 10px;
+  font-size: 18px;
+  cursor: pointer;
+  transition: transform 0.2s, background 0.3s;
+}
+
+.gender-btn:hover {
+  background-color: #023e8a;
+  transform: scale(1.05);
+}
+
+.hidden {
+  display: none;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.visible {
+  display: block;
+  opacity: 1;
+  transition: opacity 0.4s ease;
+}
+
+/* Section diagnosis */
+#diagnosisSection {
+  background: #f5fbff;
+  padding: 80px 20px;
+  text-align: center;
+  min-height: 100vh;
+}
+
+#diagnosisSection h2 {
+  font-size: 30px;
+  color: #003049;
+  margin-bottom: 10px;
+}
+
+#diagnosisSection p {
+  color: #336;
+  margin-bottom: 30px;
+}
+
+.symptom-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 15px;
+  margin: 0 auto 40px;
+  max-width: 1000px;
+  text-align: left;
+}
+
+.symptom-item {
+  background-color: #e3f2fd;
+  padding: 12px 18px;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}
+
+.symptom-item label {
+  margin-left: 8px;
+  font-size: 16px;
+  color: #003049;
+}
+
+.diagnose-btn {
+  background-color: #0277bd;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  padding: 14px 30px;
+  font-size: 18px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.diagnose-btn:hover {
+  background-color: #01579b;
+  transform: translateY(-3px);
+}
+
+.results-container {
+  margin-top: 40px;
+  background: #e1f5fe;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+#diagnosisSection {
+  display: none;
+}
+
+/* ===== Styling baru untuk daftar gejala (versi full card) ===== */
+.symptoms-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+  margin-top: 30px;
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 10px;
+}
+
+/* Setiap gejala jadi seperti card */
+.symptom-item {
+  background: #ffffff;
+  border-radius: 15px;
+  box-shadow: 0 5px 10px rgba(0,0,0,0.08);
+  padding: 22px 18px;
+  text-align: center;
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: all 0.25s ease;
+}
+
+/* Efek hover */
+.symptom-item:hover {
+  transform: translateY(-5px);
+  border-color: #5a8dee;
+  box-shadow: 0 7px 15px rgba(90,141,238,0.25);
+}
+
+/* Hilangkan checkbox asli */
+.symptom-item input[type="checkbox"] {
+  display: none;
+}
+
+/* Teks gejala */
+.symptom-item label {
+  font-size: 1rem;
+  color: #003049;
+  font-weight: 500;
+  cursor: pointer;
+  display: block;
+  user-select: none;
+}
+
+/* Saat dicentang, ubah warna card */
+.symptom-item:has(input[type="checkbox"]:checked) {
+  background: linear-gradient(135deg, #5a8dee, #9cb7ff);
+  color: #fff;
+  font-weight: 600;
+  border-color: #4b77d8;
+  transform: scale(1.03);
+  box-shadow: 0 8px 20px rgba(90,141,238,0.4);
+}
+
+/* Responsif */
+@media (max-width: 768px) {
+  .symptoms-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 500px) {
+  .symptoms-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ===== Hasil Analisis ===== */
+.result-box {
+  background: #f0faff;
+  border-radius: 15px;
+  padding: 30px 25px;
+  max-width: 800px;
+  margin: 50px auto;
+  box-shadow: 0 4px 15px rgba(0, 119, 182, 0.15);
+  text-align: left;
+  animation: fadeIn 0.8s ease;
+}
+
+.result-box h3 {
+  color: #023e8a;
+  font-size: 24px;
+  margin-bottom: 20px;
+  border-bottom: 2px solid #90e0ef;
+  padding-bottom: 10px;
+  text-align: center;
+}
+
+.result-box p {
+  font-size: 16px;
+  color: #333;
+  line-height: 1.6;
+}
+
+.result-item {
+  background-color: #e0f7fa;
+  border-radius: 10px;
+  padding: 12px 18px;
+  margin-bottom: 12px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.result-item strong {
+  color: #0077b6;
+  font-size: 17px;
+}
+
+.result-item span {
+  color: #555;
+  font-size: 15px;
+  font-style: italic;
+}
+
+/* tambahan efek muncul */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
