@@ -35,29 +35,29 @@ body {
 }
 
 .hero-content h1 {
-  font-size: 4.5rem;              /* lebih besar dan mencolok */
+  font-size: 4.5rem;              
   font-weight: 800;
-  color: #1e2f58;                 /* biru gelap, elegan dan kontras */
+  color: #1e2f58;                 
   letter-spacing: 1.5px;
   text-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
-  font-size: 4rem;      /* Besarin biar mencolok */
+  font-size: 4rem;     
   font-weight: 800;
-  margin-top: 10px;     /* <– KECILIN jarak dari atas di sini */
+  margin-top: 10px;     
   margin-bottom: 12px;
-  border-bottom: 3px solid #a5c9e2; /* garis di bawah judul */
-  display: inline-block;             /* biar garisnya cuma sepanjang teks */
+  border-bottom: 3px solid #a5c9e2; 
+  display: inline-block;             
   padding-bottom: 3px;
 }
 
 .hero-content h2 {
-  font-size: 1.5rem;              /* sedikit lebih kecil dari sebelumnya */
+  font-size: 1.5rem;              
   color: #1e3a8a;
   font-weight: 500;
   margin-bottom: 25px;
 }
 
 .hero-content p {
-  font-size: 1.2rem;                /* kecil tapi tetap mudah dibaca */
+  font-size: 1.2rem;                
   color: #334155;
   line-height: 1.6;
   max-width: 800px;
@@ -95,7 +95,7 @@ body {
   margin-top: -50px;
   margin-bottom: 50px;
   font-weight: 600;
-  border-bottom: 3px solid #a5c9e2; /* garis di bawah judul */
+  border-bottom: 3px solid #a5c9e2; 
   display: inline-block;  
   padding-bottom: 10px;
 }
@@ -114,8 +114,8 @@ body {
   padding: 30px;
   box-shadow: 0 5px 12px rgba(0, 0, 0, 0.08);
   transition: transform 0.2s, box-shadow 0.3s;
-  border-bottom: 3px solid #a5c9e2; /* garis di bawah judul */
-  display: inline-block;             /* biar garisnya cuma sepanjang teks */
+  border-bottom: 3px solid #a5c9e2; 
+  display: inline-block;             
   padding-bottom: 3px;
 }
 
@@ -150,7 +150,7 @@ footer {
   text-align: center;
   background-color: #e3f2fd;
   padding: 100px 20px;
-  min-height: 100vh; /* biar tingginya penuh layar */
+  min-height: 100vh; 
 }
 
 #genderSection h2 {
@@ -340,7 +340,7 @@ footer {
   max-width: 800px;
   margin: 50px auto;
   box-shadow: 0 4px 15px rgba(0, 119, 182, 0.15);
-  text-align: left;
+  text-align: justify;
   animation: fadeIn 0.8s ease;
 }
 
@@ -444,17 +444,17 @@ footer {
 
 .symptom-btn {
   display: flex;
-  align-items: center;       /* vertikal center */
-  justify-content: center;   /* horizontal center */
+  align-items: center;      
+  justify-content: center;   
   text-align: center;
   background-color: #f8fafc;
   color: #1e293b;
   border: 2px solid #cbd5e1;
   border-radius: 12px;
   width: 100%;
-  height: 80px;              /* tambahin tinggi tetap */
-  padding: 10px;             /* jangan terlalu besar biar teks di tengah */
-  line-height: normal;       /* reset line-height */
+  height: 80px;              
+  padding: 10px;             
+  line-height: normal;     
   font-size: 1rem;
   font-weight: 500;
   cursor: pointer;
@@ -476,4 +476,21 @@ footer {
   color: #ffffff;
   border-color: #0ea5e9;
   box-shadow: 0 3px 10px rgba(14, 165, 233, 0.4);
+}
+
+.btn-home {
+  display: block;
+  margin: 20px auto;
+  padding: 12px 24px;
+  background-color: #0077b6;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn-home:hover {
+  background-color: #023e8a;
 }
