@@ -20,35 +20,48 @@ body {
 /* ===== Hero Section ===== */
 .hero-section {
   text-align: center;
-  padding: 120px 20px 100px;
+  padding: 120px 20px 120px;
   background: linear-gradient(160deg, #a8dadc, #e0f7fa);
   color: #003049;
 }
 
 .hero-content {
   background-color: rgba(255, 255, 255, 0.6);
-  max-width: 800px;
+  max-width: 1000px;
   margin: auto;
-  padding: 20px;
+  padding: 40px;
   border-radius: 15px;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
 }
 
 .hero-content h1 {
-  font-size: 56px;
-  margin-bottom: 10px;
+  font-size: 4.5rem;              /* lebih besar dan mencolok */
+  font-weight: 800;
+  color: #1e2f58;                 /* biru gelap, elegan dan kontras */
+  letter-spacing: 1.5px;
+  text-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
+  font-size: 4rem;      /* Besarin biar mencolok */
+  font-weight: 800;
+  margin-top: 10px;     /* <– KECILIN jarak dari atas di sini */
+  margin-bottom: 12px;
+  border-bottom: 3px solid #a5c9e2; /* garis di bawah judul */
+  display: inline-block;             /* biar garisnya cuma sepanjang teks */
+  padding-bottom: 3px;
 }
 
 .hero-content h2 {
-  font-weight: 400;
-  color: #01497c;
-  margin-bottom: 20px;
+  font-size: 1.5rem;              /* sedikit lebih kecil dari sebelumnya */
+  color: #1e3a8a;
+  font-weight: 500;
+  margin-bottom: 25px;
 }
 
 .hero-content p {
-  font-size: 18px;
-  line-height: 1.7;
-  margin-bottom: 30px;
+  font-size: 1.2rem;                /* kecil tapi tetap mudah dibaca */
+  color: #334155;
+  line-height: 1.6;
+  max-width: 800px;
+  margin: 0 auto 25px auto;
 }
 
 .btn-primary {
@@ -60,6 +73,7 @@ body {
   font-size: 16px;
   cursor: pointer;
   transition: background 0.3s, transform 0.2s;
+  margin: 30px auto 0;
 }
 
 .btn-primary:hover {
@@ -68,6 +82,7 @@ body {
 }
 
 /* ===== Info Section ===== */
+
 .info-section {
   background-color: #ffffff;
   padding: 100px 20px;
@@ -80,6 +95,9 @@ body {
   margin-top: -50px;
   margin-bottom: 50px;
   font-weight: 600;
+  border-bottom: 3px solid #a5c9e2; /* garis di bawah judul */
+  display: inline-block;  
+  padding-bottom: 10px;
 }
 
 .info-grid {
@@ -96,6 +114,9 @@ body {
   padding: 30px;
   box-shadow: 0 5px 12px rgba(0, 0, 0, 0.08);
   transition: transform 0.2s, box-shadow 0.3s;
+  border-bottom: 3px solid #a5c9e2; /* garis di bawah judul */
+  display: inline-block;             /* biar garisnya cuma sepanjang teks */
+  padding-bottom: 3px;
 }
 
 .info-card:hover {
@@ -113,6 +134,7 @@ body {
   font-size: 15.5px;
   line-height: 1.7;
 }
+
 
 /* ===== Footer ===== */
 footer {
@@ -369,4 +391,89 @@ footer {
     opacity: 1;
     transform: translateY(0);
   }
+}
+
+.header-section {
+  text-align: center;
+  background: linear-gradient(135deg, #c8d9ff, #e6f0ff);
+  padding: 25px 15px;
+  border-radius: 16px;
+  margin-bottom: 25px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.header-section h2 {
+  color: #2d3a7b;
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+  letter-spacing: 0.5px;
+}
+
+.header-section p {
+  color: #4a5568;
+  font-size: 1rem;
+  margin: 0;
+}
+
+/* 🌸 Tampilan bagian judul gejala */
+.gejala-header {
+  text-align: center;
+  background: linear-gradient(135deg, #dbeafe, #bfdbfe);
+  padding: 35px 20px;
+  margin: 40px auto 50px auto;
+  width: 80%;
+  border-radius: 20px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+.gejala-header h1 {
+  color: #1e3a8a;
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+  position: relative;
+  top: -15px;
+}
+
+.gejala-header p {
+  color: #334155;
+  font-size: 1.1rem;
+  margin: 0;
+}
+
+.symptom-btn {
+  display: flex;
+  align-items: center;       /* vertikal center */
+  justify-content: center;   /* horizontal center */
+  text-align: center;
+  background-color: #f8fafc;
+  color: #1e293b;
+  border: 2px solid #cbd5e1;
+  border-radius: 12px;
+  width: 100%;
+  height: 80px;              /* tambahin tinggi tetap */
+  padding: 10px;             /* jangan terlalu besar biar teks di tengah */
+  line-height: normal;       /* reset line-height */
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+/* hover effect */
+.symptom-btn:hover {
+  background-color: #e0f2fe;
+  border-color: #38bdf8;
+  box-shadow: 0 4px 10px rgba(56, 189, 248, 0.25);
+  transform: translateY(-2px);
+}
+
+/* tombol aktif */
+.symptom-btn.active {
+  background-color: #38bdf8;
+  color: #ffffff;
+  border-color: #0ea5e9;
+  box-shadow: 0 3px 10px rgba(14, 165, 233, 0.4);
 }
