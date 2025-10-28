@@ -53,10 +53,10 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   const diagnosisDescriptions = {
-    D1: { idn: "Depresi Vegetatif", desc: "Gangguan pola tidur dan energi menurun." },
-    D2: { idn: "Depresi Agitasi", desc: "Kegelisahan, mudah marah, dan cemas berlebihan." },
-    D3: { idn: "Depresi Disritmik", desc: "Depresi ringan namun menetap lama." },
-    D4: { idn: "Depresi Psikotik", desc: "Depresi berat disertai halusinasi atau delusi." }
+    D1: { idn: "Depresi Vegetatif", desc: "Ditandai gangguan fungsi tubuh seperti perubahan pola tidur, nafsu makan, kelelahan, dan penurunan energi. Sering memengaruhi rutinitas harian serta menurunkan produktivitas." },
+    D2: { idn: "Depresi Agitasi", desc: "Menunjukkan kegelisahan dan ketidakmampuan untuk tenang. Penderitanya mudah marah, gelisah, dan cemas berlebihan. Perlu perhatian agar tidak berkembang menjadi perilaku impulsif." },
+    D3: { idn: "Depresi Disritmik", desc: "Kondisi depresi kronis yang berlangsung lama dengan gejala ringan namun menetap. Ditandai suasana hati sedih berkepanjangan, kelelahan, dan kehilangan minat dalam aktivitas sehari-hari." },
+    D4: { idn: "Depresi Psikotik", desc: "Depresi berat yang disertai gejala psikotik seperti halusinasi atau delusi. Termasuk kondisi serius yang membutuhkan penanganan profesional segera." }
   };
 
   function renderResultBox(kb, results) {
@@ -67,7 +67,7 @@ document.addEventListener("DOMContentLoaded", () => {
         <div class="result-box">
           <h3>Hasil Analisis</h3>
           <p><strong>Tidak ditemukan indikasi depresi</strong>.</p>
-          <p>Jika kamu merasa tidak nyaman, pertimbangkan untuk berkonsultasi.</p>
+          <p>Namun, jika kamu merasa cemas atau tidak nyaman, pertimbangkan untuk berbicara dengan tenaga profesional</p>
         </div>`;
       return;
     }
@@ -80,9 +80,11 @@ document.addEventListener("DOMContentLoaded", () => {
         <p><strong>${detail.idn}</strong></p>
         <p><strong>Tingkat keyakinan sistem:</strong> ${(topCF * 100).toFixed(2)}%</p>
         <div>${detail.desc}</div>
+        <br>
+        <p style="margin-top:10px;font-style:italic;">Catatan: Hasil ini bersifat indikatif awal, bukan diagnosis medis. Jika gejala menetap, sebaiknya konsultasi ke tenaga ahli.</p>
       </div>`;
   }
-
+  
   async function showSymptomsForGender(gender) {
     try {
       const kb = await loadKB();
@@ -110,6 +112,7 @@ document.addEventListener("DOMContentLoaded", () => {
         </div>
        
       `;
+
       main.appendChild(section);
       renderSymptomsList(symptomsToShow, "symptoms-list");
 
@@ -118,9 +121,11 @@ document.addEventListener("DOMContentLoaded", () => {
         const kb2 = await loadKB();
         const results = runInference(kb2, facts);
         renderResultBox(kb2, results);
-      });
+});
 
-      section.scrollIntoView({ behavior: "smooth", block: "start" });
+// ✨ gak perlu scroll otomatis ke bawah
+// section.scrollIntoView({ behavior: "smooth", block: "start" });
+
     } catch (err) {
       console.error(err);
     }
@@ -134,7 +139,8 @@ document.addEventListener("DOMContentLoaded", () => {
   startBtn.addEventListener("click", () => {
     hero.classList.add("hidden");
     genderSection.classList.remove("hidden");
-    genderSection.scrollIntoView({ behavior: "smooth" });
+    homeButton.style.display = "block";
+    window.scrollTo({ top: 0, behavior: "smooth" });
   });
 
   document.querySelectorAll(".gender-btn").forEach(btn => {
@@ -143,4 +149,16 @@ document.addEventListener("DOMContentLoaded", () => {
       showSymptomsForGender(gender);
     });
   });
+
+  // === Tambahan tombol Home ===
+  const homeButton = document.createElement("button");
+  homeButton.textContent = "Kembali ke Halaman Awal";
+  homeButton.className = "btn-home";
+  homeButton.addEventListener("click", () => {
+    window.location.href = "ui.html"; 
+  });
+  const footer = document.querySelector("footer");
+  document.body.insertBefore(homeButton, footer);
+  homeButton.style.display = "none";
+
 });
