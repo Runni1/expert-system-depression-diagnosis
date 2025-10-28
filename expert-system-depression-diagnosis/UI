@@ -1,1 +1,99 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MindEase | Ruang Tenang untuk Mengenali Kondisi Mentalmu</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ================= HERO SECTION ================= -->
+  <header class="hero-section">
+    <div class="hero-content fade-in">
+      <h1>MindEase</h1>
+      <h2>Ruang Tenang untuk Mengenali Kondisi Mentalmu</h2>
+      <p>
+        Depresi bukan sekadar rasa sedih. Ini adalah kondisi kesehatan mental
+        yang memengaruhi cara kita berpikir, merasa, dan berperilaku.
+        <br><br>
+        MindEase membantu kamu mengenali tanda-tanda awal depresi agar kamu bisa
+        memahami diri sendiri dengan lebih baik.
+      </p>
+      <button id="startBtn" class="btn-primary">Mulai Pemeriksaan Diri</button>
+    </div>
+  </header>
+
+  <!-- ================= GENDER SECTION ================= -->
+  <main id="mainContent">
+    <section id="genderSection" class="hidden">
+      <h2>Pilih Jenis Kelamin Kamu</h2>
+      <div class="gender-options">
+        <button class="gender-btn" data-gender="men">Laki-laki</button>
+        <button class="gender-btn" data-gender="women">Perempuan</button>
+      </div>
+    </section>
+  </main>
+
+  <!-- ================= INFO SECTION ================= -->
+  <section class="info-section">
+    <h2>Kenali Lebih Dalam Tentang Depresi</h2>
+    <div class="info-grid">
+      <div class="info-card">
+        <h3>Apa Itu Depresi?</h3>
+        <p>Depresi adalah gangguan suasana hati yang membuat seseorang merasa sedih berkepanjangan, kehilangan minat, dan sulit menikmati hal-hal yang dulu disukai.</p>
+      </div>
+      <div class="info-card">
+        <h3>Penyebab Umum Depresi</h3>
+        <p>Bisa disebabkan oleh kombinasi faktor biologis, psikologis, dan lingkungan seperti stres berat, trauma, atau ketidakseimbangan hormon.</p>
+      </div>
+      <div class="info-card">
+        <h3>Tanda dan Gejala Umum</h3>
+        <p>Kehilangan energi, sulit tidur, mudah lelah, merasa tidak berharga, sulit konsentrasi, dan kehilangan semangat hidup.</p>
+      </div>
+      <div class="info-card">
+        <h3>Mengapa Deteksi Dini Penting</h3>
+        <p>Mengenali gejala sejak awal membantu mendapatkan dukungan dan penanganan yang tepat sebelum kondisi menjadi lebih berat.</p>
+      </div>
+      <div class="info-card">
+        <h3>Cara Mengelola Emosi</h3>
+        <p>Mengenali dan menerima emosi adalah langkah penting dalam proses pemulihan dan menjaga keseimbangan mental.</p>
+      </div>
+      <div class="info-card">
+        <h3>Kapan Harus Mencari Bantuan?</h3>
+        <p>Jika gejala mulai mengganggu aktivitas harian, segera konsultasi dengan profesional kesehatan mental. Bantuan selalu tersedia.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= FOOTER ================= -->
+  <footer>
+    <p>© 2025 MindEase | Dikembangkan oleh Runni & Lathifah</p>
+  </footer>
+
+  <!-- Script inference engine -->
+  <script src="inferenceEngine.js"></script>
+
+  <!-- Tambahan logika untuk sembunyikan info-section -->
+  <script>
+    const startBtn = document.getElementById("startBtn");
+    const genderSection = document.getElementById("genderSection");
+    const infoSection = document.querySelector(".info-section");
+
+    startBtn.addEventListener("click", () => {
+      // tampilkan gender section
+      genderSection.classList.remove("hidden");
+      // sembunyikan tombol start
+      startBtn.style.display = "none";
+      // sembunyikan info-section agar tidak tampil saat pilih gender
+      if (infoSection) {
+        infoSection.style.display = "none";
+      }
+      // scroll ke bagian gender
+      window.scrollTo({ top: genderSection.offsetTop, behavior: "smooth" });
+    });
+  </script>
+
+</body>
+</html>
 
